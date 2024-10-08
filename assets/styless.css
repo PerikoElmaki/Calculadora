@@ -2,9 +2,12 @@
 :root{
     --fondoCalc: #1d2123; /* Fondo oscuro */
     --btnNum: #4d4d4d; /* Botones numéricos oscuros */
-    --btnOp: #303335; /* Botones de operación naranja */
+    --btnOp: #711e86; /* Botones de operación naranja */
     --btnIgual: #595959; /* Botón de igual azul */
     --texto: #ffffff; /* Color de texto claro */
+    --parentesis: #000000; /* Color de texto claro */
+    --guardarPegar: #4006e0; /* Color de texto claro */
+    --limpiar: #8f0f0f ;
 }
 
 *{
@@ -87,11 +90,19 @@ img:hover{
     background-color: transparent;
     outline: none;
     border: none;
-    background-color: #871c8b;
+    background-color: #7c657b;
     color: var(--texto);
     text-align: right;
     border-radius: 10px;
     padding: 5px;
+}
+
+.parentesis{
+    background-color: var(--parentesis);
+}
+
+.guardarPegar{
+    background-color: var(--guardarPegar);
 }
 
 .botones{
@@ -110,11 +121,16 @@ button{
     font-size: 20px;
     border-radius: 5px;
     border: none;
-    background-color: var(--btnNum);
     color: var(--texto);
     cursor: pointer;
     
 }
+
+.numero{
+    background-color: var(--btnNum);
+}
+
+
 /* Pulsaciones */
 button:active{
     transform: translateY(2px);
@@ -137,16 +153,16 @@ button:active{
 }
 
 .parentesis{
-    background-color: var(--btnOp);
+    background-color: var(--parentesis);
     /* grid-column: span 2; */
     width: 93%;
 }
 
 .backspace{
-    background-color: var(--btnOp);
+    background-color: var(--btnNum);
 }
 .limpiar{
-    background-color: var(--btnOp);
+    background-color: var(--limpiar);
 }
 
 /* Color gradient de fondo */
