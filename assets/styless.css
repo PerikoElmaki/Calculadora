@@ -2,12 +2,12 @@
 :root{
     --fondoCalc: #1d2123; /* Fondo oscuro */
     --btnNum: #4d4d4d; /* Botones numéricos oscuros */
-    --btnOp: #a121a5; /* Botones de operación naranja */
+    --btnOp: #59125c; /* Botones de operación naranja */
     --btnIgual: #ffffff; /* Botón de igual azul */
     --texto: #ffffff; /* Color de texto claro */
-    --parentesis: #000000; /* Color de texto claro */
-    --guardarPegar: #4006e0; /* Color de texto claro */
-    --limpiar: #8f0f0f ;
+    --parentesis: #161616; /* Color de texto claro */
+    --guardarPegar: #22093a; /* Color de texto claro */
+    --limpiar: #c5c5c5 ;
 }
 
 *{
@@ -174,10 +174,20 @@ button:active{
 }
 
 .backspace{
-    background-color: var(--btnNum);
+    background-color: rgb(122, 116, 116);
 }
+
+.backspace:hover{
+    background-color: #8d1818;
+}
+
 .limpiar{
-    background-color: var(--limpiar);
+    background-color: var(--btnIgual);
+    color: black;
+}
+.limpiar:hover {
+    background-color: #8d1818;
+    color: var(--texto);
 }
 
 /* Color gradient de fondo */
