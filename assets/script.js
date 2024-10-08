@@ -3,7 +3,7 @@
 const punto = document.querySelector("#punto");
 
 let puntosScreen = document.querySelector("#pantalla");
-let numGuardado;
+let numGuardado = 0;
 
 //  Función principal para los números
 
@@ -50,12 +50,15 @@ const abrirParentesis = () => {
     if (puntosScreen.value.includes("(")) {
         alert("Ya se ha abierto un paréntesis");
     } else {
-        // Comprobar que antes de abrir paréntesis haya un operador en la posición anterior del string
+        // Comprobar que antes de abrir paréntesis haya un operador en la posición anterior del string 
+        
         let ultchar = puntosScreen.value.substring(puntosScreen.value.length - 1, puntosScreen.value.length);
-        // console.log({ultchar});
+
         if (ultchar == '+' || ultchar == '-' || ultchar == '*' || ultchar == '/' || ultchar == '%') {
             puntosScreen.value += "(";
-        } else {
+        } else if (ultchar == '0') { // O si está en valor inicial
+            puntosScreen.value = "(";
+        }else {
             alert("No se puede abrir un paréntesis antes de un operador");
         }
     }
@@ -134,7 +137,11 @@ const guardar = () => {
 };
 
 const pegar = () => {
-    // PREGUNTAR FERNANDO
-    puntosScreen.value += numGuardado;
+    // Si es el valor inicial ('0') que sobreescriba 
+    if (puntosScreen.value == '0') {
+        puntosScreen.value = numGuardado;
+    } else {
+        puntosScreen.value += numGuardado;
+    }
 };
 
